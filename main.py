@@ -20,9 +20,11 @@ def main():
         if config.get("touchscreen_enabled", False):
             from touchscreenui.tui import TouchScreenUI
             window = TouchScreenUI()
+            window.showFullScreen()
         else:
             from voiceonlyui.vui import VoiceOnlyUI
             window = VoiceOnlyUI()
+            window.showFullScreen() 
     
     sys.exit(app.exec())
 

@@ -126,7 +126,7 @@ class Onboarding(QtWidgets.QWidget):
             "onboarding_complete": True,
             "has_touchscreen": self.touchscreen_enabled
         }
-        with open("config.json", "w") as f:
+        with open(os.path.join("..", "config.json"), "w") as f:
             json.dump(config, f, indent=4)
         
         QtWidgets.QMessageBox.information(self, "Complete", "Setup complete!")

@@ -68,6 +68,21 @@
 - The issue is that I need to save the stats into config.json
 - I think that I just need to create an array. Let me try that out.
 
-### 9:38
+### 9:38 PM
 - I'm having a lot of issues with git, so I've seeked out the help of Gemini
-- 
+- It told me that I was using files that were too large. I ran a few commands and had the git fixed.
+
+### 10:16 PM
+- Break ended. I decided against the 5 minute deduction.
+
+- I've decided to work on the frontend and then work on the backend after.
+
+### 12:03 AM
+- Refocusing. I have one thing I need to get done now:
+- Implementing the touchscreen cards and text along with the clock
+
+### 12:06 AM
+- I have to implement the card layout. I can start with a QFrame, let me implement that
+
+### 12:35 AM
+- Implemented the QFrame cards.

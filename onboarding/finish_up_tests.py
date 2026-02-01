@@ -1,3 +1,4 @@
+from asyncio import open_unix_connection
 import os
 import sys
 import json
@@ -9,7 +10,7 @@ def verify_files():
     path_to_config_json = os.path.join("config.json")
 
 
-
+ 
     if os.path.isdir(path_to_voice) == True:
         print("os returned true to voice")
     elif os.path.isdir(path_to_voice) == False:
@@ -25,6 +26,9 @@ def verify_files():
     else:
         print("os reported something incorrectly")
 
-def write_to-
+    write_to_config()
+def write_to_config():
+    with open_unix_connection("../config.json, "w") as configfile:
+        print(configfile)
 
-verify_files()  
+verify_files() 
