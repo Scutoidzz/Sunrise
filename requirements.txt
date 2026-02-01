@@ -1,0 +1,4 @@
+openwakeword
+PyQt6
+sherpa-onnx 
+sounddevice
