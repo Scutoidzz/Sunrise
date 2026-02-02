@@ -3,6 +3,7 @@ from PyQt6.QtCore import QTimer, QTime, Qt
 from PyQt6.QtGui import *
 import sys
 from voice.listen import VoiceRecognizer
+import logging
 
 class VoiceOnlyUI(QWidget):
     def __init__(self):

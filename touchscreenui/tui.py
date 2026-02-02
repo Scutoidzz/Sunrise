@@ -31,7 +31,9 @@ class TouchScreenUI(QtWidgets.QWidget):
         back_widget.setStyleSheet("background-color: #1a1a2e;")
         back_layout = QtWidgets.QVBoxLayout(back_widget)
         
-        back_wallpaper = QtWidgets.QLabel("This isn't implemented yet")
+        back_wallpaper = QtWidgets.QLabel()
+        back_wallpaper.setPixmap(QtGui.QPixmap("wallpapers/earth/dark/01.jpg"))
+        # TODO: Find out why the wallpaper doesn't attempt to fill
         back_wallpaper.setStyleSheet("color: #444; font-size: 24px;")
         back_layout.addWidget(back_wallpaper)
         
@@ -39,10 +41,10 @@ class TouchScreenUI(QtWidgets.QWidget):
         front_layout = QtWidgets.QVBoxLayout(front_widget)
         front_layout.setContentsMargins(40, 40, 40, 40)
         
-        front_time = QtWidgets.QLabel("00:00")
-        front_time.setAlignment(QtCore.Qt.AlignmentFlag.AlignBottom | QtCore.Qt.AlignmentFlag.AlignLeft)
-        front_time.setContentsMargins(0, 0, 0, 0)
-        front_time.setStyleSheet("color: white; font-size: 48px;")
+        self.front_time = QtWidgets.QLabel("00:00")
+        self.front_time.setAlignment(QtCore.Qt.AlignmentFlag.AlignBottom | QtCore.Qt.AlignmentFlag.AlignLeft)
+        self.front_time.setContentsMargins(0, 0, 0, 0)
+        self.front_time.setStyleSheet("color: white; font-size: 48px;")
 
         # Only add the knowledge card if not downloaded
         if not knowledge_downloaded:
@@ -51,20 +53,20 @@ class TouchScreenUI(QtWidgets.QWidget):
             front_layout.addWidget(knowledge_card)
 
         front_layout.addStretch()
-        front_layout.addWidget(front_time, alignment=QtCore.Qt.AlignmentFlag.AlignBottom | QtCore.Qt.AlignmentFlag.AlignLeft)
+        front_layout.addWidget(self.front_time, alignment=QtCore.Qt.AlignmentFlag.AlignBottom | QtCore.Qt.AlignmentFlag.AlignLeft)
         
         voice_button = QtWidgets.QPushButton("Voice")
         voice_button.setFixedSize(120, 50)
         voice_button.setStyleSheet("""
             QPushButton {
-                background-color: rgba(0, 150, 255, 0.8);
+                background-color: rgba(255, 255, 255, 0.8);
                 color: white;
-                border-radius: 25px;
+                border-radius: 4px;
                 font-size: 18px;
                 font-weight: bold;
             }
             QPushButton:pressed {
-                background-color: rgba(0, 120, 200, 0.9);
+                background-color: rgba(255, 255, 255, 0.9);
             }
         """)
         voice_button.clicked.connect(self.toggle_listening)
@@ -80,6 +82,18 @@ class TouchScreenUI(QtWidgets.QWidget):
         self.voice_recognizer = VoiceRecognizer()
         self.result_timer = QtCore.QTimer()
         self.result_timer.timeout.connect(self.process_voice_results)
+        
+        # Live clock timer
+        self.clock_timer = QtCore.QTimer()
+        self.clock_timer.timeout.connect(self.update_clock)
+        self.clock_timer.start(1000)  # Update every second
+        self.update_clock()  # Initial call
+
+    def update_clock(self):
+        current_time = QtCore.QTime.currentTime()
+        time_string = current_time.toString("HH:mm")
+        # front_time is local to __init__, need to store as instance variable
+        self.front_time.setText(time_string)
 
 
     def open_knowledge_download(self):
