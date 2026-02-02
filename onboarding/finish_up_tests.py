@@ -1,4 +1,3 @@
-from asyncio import open_unix_connection
 import os
 import sys
 import json
@@ -28,7 +27,16 @@ def verify_files():
 
     write_to_config()
 def write_to_config():
-    with open_unix_connection("../config.json, "w") as configfile:
+    with open("../config.json", "w") as configfile:
         print(configfile)
 
-verify_files() 
+def write_test_results(voicer, embedr):
+    results = {
+        "voice": voicer,
+        "embedding": embedr
+    }
+    with open("../config.json", "w") as resultsfile:
+        print(resultsfile)
+        json.dump(results, resultsfile)                                                                                                                                     
+        print(resultsfile)      
+        json.dump(results, resultsfile)

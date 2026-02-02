@@ -13,6 +13,22 @@ def main():
         from onboarding.onboard import Onboarding
         window = Onboarding()
         window.showFullScreen()
+        app.exec()
+        
+        # After onboarding closes, check if completed and launch main UI
+        if os.path.exists(config_path):
+            with open(config_path, "r") as f:
+                config = json.load(f)
+            
+            if config.get("touchscreen_enabled", False):
+                from touchscreenui.tui import TouchScreenUI
+                window = TouchScreenUI()
+                window.showFullScreen()
+            else:
+                from voiceonlyui.vui import VoiceOnlyUI
+                window = VoiceOnlyUI()
+                window.showFullScreen()
+        sys.exit(app.exec())
     else:
         with open(config_path, "r") as f:
             config = json.load(f)
@@ -24,7 +40,7 @@ def main():
         else:
             from voiceonlyui.vui import VoiceOnlyUI
             window = VoiceOnlyUI()
-            window.showFullScreen() 
+            window.showFullScreen()
     
     sys.exit(app.exec())
 

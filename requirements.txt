@@ -1,4 +1,4 @@
 openwakeword
 PyQt6
-sherpa-onnx 
+vosk
 sounddevice

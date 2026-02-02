@@ -86,3 +86,19 @@
 
 ### 12:35 AM
 - Implemented the QFrame cards.
+
+### 9:14 AM
+- I fell  asleep :heavysob:
+
+### 9:47 AM
+- I'm running into my first hurdle today.
+- The glow isn't working
+- I think this is a relatively easy fix, perhaps I just need to increase the height.
+
+### 9:49 AM
+- I have the glow working, but now I need to get some wallpapers.
+- I think mountains would be the best vibe.
+- I can start by creating folders with each wallpaper theme
+- I'll create each folder and tar it so that it works with my slow git.
+- But also, I don't want to work on wallpapers while I'm still working on the app, maybe as a finishing touch.
+

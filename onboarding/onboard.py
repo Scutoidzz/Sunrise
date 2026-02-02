@@ -39,8 +39,10 @@ class Onboarding(QtWidgets.QWidget):
         
         tyes = QtWidgets.QPushButton("Yes")
         tno = QtWidgets.QPushButton("No")
-        tyes.clicked.connect(lambda: self.set_touchscreen(True, tyes.isChecked()))
-        tno.clicked.connect(lambda: self.set_touchscreen(False, tno.isChecked()))
+        tyes.setFixedSize(300, 600); # <- Semicolons because I can XD
+        tno.setFixedSize(300, 600);
+        tyes.clicked.connect(lambda: self.set_touchscreen(True))
+        tno.clicked.connect(lambda: self.set_touchscreen(False))
 
         twobuttons.addWidget(tyes)
         twobuttons.addWidget(tno)
@@ -50,8 +52,8 @@ class Onboarding(QtWidgets.QWidget):
         layout.addLayout(twobuttons)
         layout.setAlignment(twobuttons, QtCore.Qt.AlignmentFlag.AlignCenter)
     
-    def set_touchscreen(self, value, is_checked):
-        if is_checked:
+    def set_touchscreen(self, value):
+        if 1 == 1: # <- Temporary fix to get the app running.
             self.touchscreen_enabled = value
             self.final_touches_screen()
     
@@ -120,16 +122,20 @@ class Onboarding(QtWidgets.QWidget):
         if self.downloads_complete:
             self.timer.stop()
             self.finish_onboarding()
+
+    def have_internet():
+        internetlayout = QVBoxLayout()
     
     def finish_onboarding(self):
         config = {
             "onboarding_complete": True,
-            "has_touchscreen": self.touchscreen_enabled
+            "touchscreen_enabled": self.touchscreen_enabled
         }
-        with open(os.path.join("..", "config.json"), "w") as f:
+        with open("config.json", "w") as f:
             json.dump(config, f, indent=4)
         
-        QtWidgets.QMessageBox.information(self, "Complete", "Setup complete!")
+        QtWidgets.QMessageBox.information(self, "Setup Complete", "Welcome to Sunrise")
+        self.onboarding_finished = True
         self.close()
     
 
@@ -150,6 +156,8 @@ class Onboarding(QtWidgets.QWidget):
                 item.widget().deleteLater()
             elif item.layout():
                 self.clear_sub_layout(item.layout())
+
+    
     
 if __name__ == "__main__":
     app = QtWidgets.QApplication([])

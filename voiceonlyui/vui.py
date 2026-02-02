@@ -2,6 +2,7 @@ from PyQt6.QtWidgets import *
 from PyQt6.QtCore import QTimer, QTime, Qt
 from PyQt6.QtGui import *
 import sys
+from voice.listen import VoiceRecognizer
 
 class VoiceOnlyUI(QWidget):
     def __init__(self):
@@ -19,4 +20,17 @@ class VoiceOnlyUI(QWidget):
         layout.addWidget(self.status_label)
         layout.addStretch()
         
+        self.voice_recognizer = VoiceRecognizer()
+        self.voice_recognizer.start_listening()
+        
+        self.result_timer = QTimer()
+        self.result_timer.timeout.connect(self.process_voice_results)
+        self.result_timer.start(100)  # Check every 100ms
+        
         self.show()
+        
+    def process_voice_results(self):
+        results = self.voice_recognizer.get_results()
+        if results:
+            last_result = results[-1]
+            self.status_label.setText(f"Heard: {last_result}")
