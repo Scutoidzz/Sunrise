@@ -31,3 +31,5 @@ voice/y*
 voice/z*
 voice/zipformer*
 config.json
+*.zim
+*.pyc

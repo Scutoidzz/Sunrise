@@ -1,0 +1,409 @@
+
+QWidget#main_app {
+    background-color: #1a1a2e;
+}
+
+QWidget#onboarding {
+    background-color: #1a1a2e;
+}
+
+QLabel#welcome_text {
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+QPushButton#get_started {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1a1a2e;
+    border-radius: 15px;
+    font-size: 32px;
+    font-weight: bold;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    padding: 20px 40px;
+}
+
+QPushButton#get_started:pressed {
+    background-color: rgba(255, 255, 255, 1.0);
+    border: 3px solid #d7ce10ff;        
+}
+
+
+QLabel#touchscreen_question {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 60px;
+}
+
+QPushButton#touch_option {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1a1a2e;
+    border-radius: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    min-width: 300px;
+    min-height: 300px;
+}
+
+QPushButton#touch_option:pressed {
+    background-color: rgba(255, 255, 255, 1.0);
+    border: 3px solid #4CAF50;
+}
+
+/* Progress Screen */
+QLabel#loading_label {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+QProgressBar#progress {
+    border: 3px solid grey;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    height: 40px;
+}
+
+QProgressBar#progress::chunk {
+    background-color: #c89617;
+    border-radius: 0px;
+}
+
+/* TouchScreenUI */
+QWidget#touchscreen_ui {
+    background-color: #1a1a2e;
+}
+
+QLabel#clock_display {
+    color: white;
+    font-size: 72px;
+    font-weight: bold;
+}
+
+QPushButton#voice_button {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1a1a2e;
+    border-radius: 4px;
+    font-size: 28px;
+    font-weight: bold;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    min-width: 200px;
+    min-height: 80px;
+}
+
+QPushButton#voice_button:pressed {
+    background-color: rgba(255, 255, 255, 1.0);
+    border: 3px solid #ffffff;
+}
+
+QPushButton#keyboard_button {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #1a1a2e;
+    border-radius: 4px;
+    font-size: 28px;
+    font-weight: bold;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    min-width: 200px;
+    min-height: 80px;
+}
+
+QPushButton#keyboard_button:pressed {
+    background-color: rgba(255, 255, 255, 1.0);
+    border: 3px solid #ffffff;
+}
+
+QLabel#input_preview {
+    color: #f0f6ff;
+    font-size: 22px;
+    font-weight: 600;
+    background-color: rgba(20, 20, 30, 140);
+    border-radius: 12px;
+    padding: 12px 18px;
+}
+
+QPushButton#info_card {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 rgba(255, 255, 255, 0.95),
+        stop:1 rgba(240, 245, 255, 0.95));
+    border-radius: 20px;
+    border: 2px solid rgba(200, 220, 255, 0.5);
+    min-width: 400px;
+    min-height: 180px;
+}
+
+QPushButton#info_card:pressed {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+        stop:0 rgba(255, 255, 255, 1.0),
+        stop:1 rgba(2s20, 235, 255, 1.0));
+    border: 3px solid #ffffff;
+}
+
+QWidget#response_card {
+    background-color: rgba(30, 30, 50, 0.95);
+    border-radius: 24px;
+}
+
+QLabel#response_title {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+QLabel#response_body {
+    color: #ddd;
+    font-size: 22px;
+}
+
+QPushButton#close_button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    min-width: 180px;
+    min-height: 60px;
+}
+
+QPushButton#close_button:pressed {
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid #ffffff;
+}
+
+/* Listening Glow */
+QFrame#listening_glow {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+        stop:0 rgba(255,255, 255, 0),
+        stop:0.7 rgba(255, 255, 255, 20),
+        stop:0.9 rgba(255, 255, 255, 60),
+        stop:1 rgba(255, 255, 255, 100));
+    border: none;
+}
+
+QLabel#transcription {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+/* Keyboard dialog */
+QDialog#keyboard_dialog {
+    background-color: #1a1a2e;
+}
+
+QLineEdit#keyboard_input {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #1a1a2e;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 22px;
+}
+
+QPushButton#keyboard_key {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1a1a2e;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+QPushButton#keyboard_action {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #1a1a2e;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+QPushButton#keyboard_primary {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #1a1a2e;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Knowledge Download Page */
+QWidget#download_page {
+    background-color: #1a1a2e;
+}
+
+QListWidget#download_list {
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+QListWidget#download_list::item {
+    padding: 15px;
+    margin: 5px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+QListWidget#download_list::item:selected {
+    background-color: rgba(76, 175, 80, 0.3);
+    border: 2px solid #a4cb0c;
+}
+
+QLabel#storage_label {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+QComboBox#drive_picker {
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    padding: 10px;
+    min-height: 40px;
+}
+
+QProgressBar#storage_bar {
+    border: 2px solid grey;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+}
+
+QProgressBar#storage_bar::chunk {
+    background-color: #41f047;
+    border-radius: 5px;
+}
+
+QPushButton#download_button {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1a1a2e;
+    border-radius: 12px;
+    font-size: 28px;
+    font-weight: bold;
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    min-width: 300px;
+    min-height: 100px;
+}
+
+QPushButton#download_button:pressed {
+    background-color: rgba(255, 255, 255, 1.0);
+    border: 3px solid #4CAF50;
+}
+
+/* Download Progress Dialog */
+QDialog#download_dialog {
+    background-color: #1a1a2e;
+}
+
+QLabel#download_status {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+QProgressBar#download_progress {
+    border: 3px solid grey;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    height: 50px;
+}
+
+QProgressBar#download_progress::chunk {
+    background-color: #f1cb21ff;
+    border-radius: 0px;
+}
+
+/* Download Complete Dialog */
+QDialog#complete_dialog {
+    background-color: #1a1a2e;
+}
+
+QLabel#complete_message {
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+QPushButton#continue_button {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 12px;
+    font-size: 28px;
+    font-weight: bold;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    min-width: 300px;
+    min-height: 100px;
+}
+
+QPushButton#continue_button:pressed {
+    background-color: #45a049;
+    border: 3px solid white;
+}
+
+/* Voice Only UI */
+QWidget#voice_only_ui {
+    background-color: #1a1a2e;
+}
+
+QLabel#voice_status {
+    font-size: 36px;
+    color: white;
+    background-color: #3a3a3a;
+    padding: 30px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/* Common Button Styles */
+QPushButton {
+    outline: none;
+}
+
+QPushButton:focus {
+    outline: 2px solid #4CAF50;
+    outline-offset: 2px;
+}
+
+QLabel {
+    color: white;
+}
+
+QProgressBar {
+    text-align: left;
+}
+
+/* Scrollbar Styling */
+QScrollBar:vertical {
+    background: rgba(255, 255, 255, 0.1);
+    width: 20px;
+    border-radius: 10px;
+}
+
+QScrollBar::handle:vertical {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+QGraphicsDropShadowEffect {
+    blur-radius: 14px; /*TODO: Find out whats the shortest viable height*/
+    color: rgba(0, 0, 0, 60);
+    offset: 0px 6px;
+}
+ 

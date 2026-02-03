@@ -20,10 +20,21 @@ def download_embedding(progress_callback=None):
                     progress = int((downloaded / total_size) * 100)
                     progress_callback(progress)
 
-def download_sst(progress_callback=None):
-    """Download Vosk small English model (~120MB) - more accurate than tiny."""
-    voice_link = "https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip"
-    to_path = "voice/vosk-model-small-en-us-0.15.zip"
+def download_sst(model_size="small", progress_callback=None):
+    """Download Vosk English model based on model_size parameter.
+    
+    Args:
+        model_size: "tiny" (~40MB, less RAM) or "small" (~120MB, more accurate)
+        progress_callback: Optional callback for progress updates
+    """
+    if model_size == "tiny":
+        voice_link = "https://alphacephei.com/vosk/models/vosk-model-tiny-en-us-0.15.zip"
+        to_path = "voice/vosk-model-tiny-en-us-0.15.zip"
+        model_name = "vosk-model-tiny-en-us-0.15"
+    else:  # default to small
+        voice_link = "https://alphacephei.com/vosk/models/vosk-model-small-en-us-0.15.zip"
+        to_path = "voice/vosk-model-small-en-us-0.15.zip"
+        model_name = "vosk-model-small-en-us-0.15"
     
     os.makedirs("voice", exist_ok=True)
     
@@ -50,7 +61,6 @@ def download_sst(progress_callback=None):
     if vf() == False:
         raise Exception("Files not found, user will be reminded on cardUI")
     elif vf() == True:
-        print("Files found, Finishing setup")
+        print(f"Voice model {model_name} downloaded and extracted successfully")
     
     os.remove(to_path)
-

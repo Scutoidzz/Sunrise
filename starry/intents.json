@@ -1,0 +1,22 @@
+{
+  "LIGHT_ON": [
+    "turn on the light",
+    "turn the light on",
+    "turn on lights",
+    "lights on",
+    "light on",
+    "switch on the light",
+    "switch the light on",
+    "turn on the lamp"
+  ],
+  "LIGHT_OFF": [
+    "turn off the light",
+    "turn the light off",
+    "turn off lights",
+    "lights off",
+    "light off",
+    "switch off the light",
+    "switch the light off",
+    "turn off the lamp"
+  ]
+}
