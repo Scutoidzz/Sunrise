@@ -5,7 +5,8 @@ import os
 from .finish_up_tests import verify_files as vf
 
 def download_embedding(progress_callback=None):
-    embedding_link = "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/onnx/model.onnx?download=true"
+    # Use a lighter MiniLM embedding model (smaller and easier to run on low-spec devices)
+    embedding_link = "https://huggingface.co/sentence-transformers/paraphrase-MiniLM-L3-v2/resolve/main/onnx/model_O3.onnx?download=true"
     to_path = "starry/model.onnx"
     response = requests.get(embedding_link, stream=True)
     total_size = int(response.headers.get('content-length', 0))
